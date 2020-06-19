@@ -1,0 +1,18 @@
+image: continuumio/miniconda3:4.7.12
+
+before_script:
+  - apt update && apt install -y gcc
+  - conda init bash && source ~/.bashrc && echo $CONDA_DEFAULT_ENV
+  - conda env create -f install/environment.root.yml
+  - conda activate alignment_extraction && echo $CONDA_DEFAULT_ENV
+  - conda env update -f install/environment.dev.yml
+
+test:
+  script:
+    # add code quality tests here
+    # add unit tests here
+    # add script tests here
+    # add integration tests here
+    - bash tests/test_alignment_extraction_hg38_chr22/test.local.sh
+    - bash tests/test_create_rule_graph/test.sh
+    - bash tests/clean.tests.sh

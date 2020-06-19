@@ -1,0 +1,30 @@
+##############################################################################
+### Output and log directory
+##############################################################################
+output_dir: "results"
+local_log: "logs/local_log"
+cluster_log: "logs/cluster_log"
+##############################################################################
+### Other parameters
+##############################################################################
+scripts: "../docker/"
+# Link to root directory of UCSC downloads for reference species
+remote_root: "http://hgdownload.soe.ucsc.edu/goldenPath/hg38/"
+# Link to genome
+genome_link: "http://hgdownload.soe.ucsc.edu/goldenPath/hg38/vs"
+##############################################################################
+### Annotation
+##############################################################################
+# genome or part of the genome
+genome_remote: "http://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/chr22.fa.gz"
+# name of genome or part of the genome
+genome: "hg38"
+# newick tree
+tree: "http://hgdownload.soe.ucsc.edu/goldenPath/hg38/multiz100way/hg38.100way.nh"
+# the organisms must be availabe at genome_nh.
+# Please manually check
+organisms: ["rheMac","mm","bosTau","felCat","galGal","rn"]
+# UTRs and lncRNAs to map to, fasta format
+sequences: "input_files/utrs_lincRNAs.fa" # This is an example, provide own file here.
+# number of genes in a batch when splitting match tab file
+batch_size: 30

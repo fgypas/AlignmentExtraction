@@ -1,0 +1,19 @@
+*.simg
+*.img
+venv*
+data
+.snakemake
+slurm-*
+
+# Ignore any data in runs, but sync templates and run scripts
+runs/*
+!runs/config_template.yml
+!runs/run.local.sh
+!runs/run.slurm.sh
+!runs/input_files
+runs/input_files/*
+!runs/input_files/utrs_lincRNAs.fa
+!runs/input_files/cluster.json
+
+results
+logs
